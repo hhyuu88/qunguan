@@ -619,7 +619,13 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 user_id=user_id,
                 permissions=ChatPermissions(
                     can_send_messages=False,
-                    can_send_media_messages=False,
+                    can_send_audios=False,
+                    can_send_documents=False,
+                    can_send_photos=False,
+                    can_send_videos=False,
+                    can_send_video_notes=False,
+                    can_send_voice_notes=False,
+                    can_send_polls=False,
                     can_send_other_messages=False,
                     can_add_web_page_previews=False
                 )
@@ -629,35 +635,9 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
             logger.error(f"❌ 禁言失败：{e}")
             continue  # 如果禁言失败，跳过这个用户
         
-        # 发送提示消息（带动态 Emoji）
-        text = f"👋 欢迎 {new_member.mention_html()}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n👇 订阅后点击下方'我已关注'按钮验证："
-        
-        entities = [
-            MessageEntity(
-                type=MessageEntity.CUSTOM_EMOJI,
-                offset=0,
-                length=2,
-                custom_emoji_id=EMOJI_WAVE
-            ),
-            MessageEntity(
-                type=MessageEntity.CUSTOM_EMOJI,
-                offset=utf16_len(f"👋 欢迎 {new_member.mention_html()}！\n\n"),
-                length=2,
-                custom_emoji_id=EMOJI_WARNING
-            ),
-            MessageEntity(
-                type=MessageEntity.CUSTOM_EMOJI,
-                offset=utf16_len(f"👋 欢迎 {new_member.mention_html()}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n"),
-                length=2,
-                custom_emoji_id=EMOJI_MEGAPHONE
-            ),
-            MessageEntity(
-                type=MessageEntity.CUSTOM_EMOJI,
-                offset=utf16_len(f"👋 欢迎 {new_member.mention_html()}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n"),
-                length=2,
-                custom_emoji_id=EMOJI_POINT_DOWN
-            ),
-        ]
+        # 发送提示消息
+        user_name = new_member.first_name
+        text = f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n👇 订阅后点击下方'我已关注'按钮验证："
         
         keyboard = [
             [
@@ -686,9 +666,7 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
         try:
             welcome_msg = await update.message.reply_text(
                 text=text,
-                entities=entities,
-                reply_markup=reply_markup,
-                parse_mode=None  # 不使用 parse_mode，直接用 entities
+                reply_markup=reply_markup
             )
             logger.info(f"✅ 已发送欢迎消息给 {user_id}，将在 {WARNING_DELETE_SECONDS} 秒后删除")
             
@@ -728,7 +706,13 @@ async def verify_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
                 user_id=user_id,
                 permissions=ChatPermissions(
                     can_send_messages=True,
-                    can_send_media_messages=True,
+                    can_send_audios=True,
+                    can_send_documents=True,
+                    can_send_photos=True,
+                    can_send_videos=True,
+                    can_send_video_notes=True,
+                    can_send_voice_notes=True,
+                    can_send_polls=True,
                     can_send_other_messages=True,
                     can_add_web_page_previews=True
                 )
