@@ -898,15 +898,17 @@ async def verify_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
                 )
             )
             
-            success_text = (
-                f"✅ 验证成功！\n\n"
-                f"欢迎 {query.from_user.mention_html()} 加入群组！\n\n"
-                f"你现在可以自由发言了。"
-            )
+            user = query.from_user
+            user_name = user.first_name
+            if user.last_name:
+                user_name += f" {user.last_name}"
+            success_text = f"🎉 欢迎 {user_name} 加入群组！您现在可以自由发言了。"
             await query.edit_message_text(
                 success_text,
-                entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CHECK_MARK)],
-                parse_mode='HTML'
+                entities=[
+                    MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_PARTY),
+                    MessageEntity(type=MessageEntity.TEXT_MENTION, offset=utf16_len("🎉 欢迎 "), length=utf16_len(user_name), user=user)
+                ]
             )
             
             logger.info(f"用户 {user_id} 验证成功，已解除禁言")
