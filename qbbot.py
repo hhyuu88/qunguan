@@ -619,7 +619,13 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 user_id=user_id,
                 permissions=ChatPermissions(
                     can_send_messages=False,
-                    can_send_media_messages=False,
+                    can_send_audios=False,
+                    can_send_documents=False,
+                    can_send_photos=False,
+                    can_send_videos=False,
+                    can_send_video_notes=False,
+                    can_send_voice_notes=False,
+                    can_send_polls=False,
                     can_send_other_messages=False,
                     can_add_web_page_previews=False
                 )
@@ -630,8 +636,9 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
             continue  # 如果禁言失败，跳过这个用户
         
         # 发送提示消息（带动态 Emoji）
-        text = f"👋 欢迎 {new_member.mention_html()}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n👇 订阅后点击下方'我已关注'按钮验证："
-        
+        user_name = new_member.first_name
+        text = f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n👇 订阅后点击下方'我已关注'按钮验证："
+
         entities = [
             MessageEntity(
                 type=MessageEntity.CUSTOM_EMOJI,
@@ -641,24 +648,24 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
             ),
             MessageEntity(
                 type=MessageEntity.CUSTOM_EMOJI,
-                offset=utf16_len(f"👋 欢迎 {new_member.mention_html()}！\n\n"),
+                offset=utf16_len(f"👋 欢迎 {user_name}！\n\n"),
                 length=2,
                 custom_emoji_id=EMOJI_WARNING
             ),
             MessageEntity(
                 type=MessageEntity.CUSTOM_EMOJI,
-                offset=utf16_len(f"👋 欢迎 {new_member.mention_html()}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n"),
+                offset=utf16_len(f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n"),
                 length=2,
                 custom_emoji_id=EMOJI_MEGAPHONE
             ),
             MessageEntity(
                 type=MessageEntity.CUSTOM_EMOJI,
-                offset=utf16_len(f"👋 欢迎 {new_member.mention_html()}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n"),
+                offset=utf16_len(f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n"),
                 length=2,
                 custom_emoji_id=EMOJI_POINT_DOWN
             ),
         ]
-        
+
         keyboard = [
             [
                 InlineKeyboardButton(
@@ -687,8 +694,7 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
             welcome_msg = await update.message.reply_text(
                 text=text,
                 entities=entities,
-                reply_markup=reply_markup,
-                parse_mode=None  # 不使用 parse_mode，直接用 entities
+                reply_markup=reply_markup
             )
             logger.info(f"✅ 已发送欢迎消息给 {user_id}，将在 {WARNING_DELETE_SECONDS} 秒后删除")
             
@@ -709,14 +715,14 @@ async def verify_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
     if not query.data.startswith('verify_'):
         return
     
-    await query.answer()
-    
     user_id = int(query.data.split('_')[1])
     chat_id = query.message.chat_id
     
     if query.from_user.id != user_id:
         await query.answer("❌ 这不是你的验证按钮！", show_alert=True)
         return
+    
+    await query.answer()
     
     is_subscribed = await check_subscription(user_id, chat_id, context)
     
@@ -728,7 +734,13 @@ async def verify_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
                 user_id=user_id,
                 permissions=ChatPermissions(
                     can_send_messages=True,
-                    can_send_media_messages=True,
+                    can_send_audios=True,
+                    can_send_documents=True,
+                    can_send_photos=True,
+                    can_send_videos=True,
+                    can_send_video_notes=True,
+                    can_send_voice_notes=True,
+                    can_send_polls=True,
                     can_send_other_messages=True,
                     can_add_web_page_previews=True
                 )
@@ -775,8 +787,8 @@ def main():
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("bind", bind_group))
     
-    application.add_handler(CallbackQueryHandler(handle_callback))
     application.add_handler(CallbackQueryHandler(verify_subscription, pattern=r"^verify_\d+$"))
+    application.add_handler(CallbackQueryHandler(handle_callback))
     
     application.add_handler(MessageHandler(
         filters.StatusUpdate.NEW_CHAT_MEMBERS,
