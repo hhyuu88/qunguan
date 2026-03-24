@@ -635,10 +635,37 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
             logger.error(f"❌ 禁言失败：{e}")
             continue  # 如果禁言失败，跳过这个用户
         
-        # 发送提示消息
+        # 发送提示消息（带动态 Emoji）
         user_name = new_member.first_name
         text = f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n👇 订阅后点击下方'我已关注'按钮验证："
-        
+
+        entities = [
+            MessageEntity(
+                type=MessageEntity.CUSTOM_EMOJI,
+                offset=0,
+                length=2,
+                custom_emoji_id=EMOJI_WAVE
+            ),
+            MessageEntity(
+                type=MessageEntity.CUSTOM_EMOJI,
+                offset=utf16_len(f"👋 欢迎 {user_name}！\n\n"),
+                length=2,
+                custom_emoji_id=EMOJI_WARNING
+            ),
+            MessageEntity(
+                type=MessageEntity.CUSTOM_EMOJI,
+                offset=utf16_len(f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n"),
+                length=2,
+                custom_emoji_id=EMOJI_MEGAPHONE
+            ),
+            MessageEntity(
+                type=MessageEntity.CUSTOM_EMOJI,
+                offset=utf16_len(f"👋 欢迎 {user_name}！\n\n⚠️ 在发言之前，请先订阅我们的频道：\n📢 {channel}\n\n"),
+                length=2,
+                custom_emoji_id=EMOJI_POINT_DOWN
+            ),
+        ]
+
         keyboard = [
             [
                 InlineKeyboardButton(
@@ -666,6 +693,7 @@ async def handle_new_member(update: Update, context: ContextTypes.DEFAULT_TYPE):
         try:
             welcome_msg = await update.message.reply_text(
                 text=text,
+                entities=entities,
                 reply_markup=reply_markup
             )
             logger.info(f"✅ 已发送欢迎消息给 {user_id}，将在 {WARNING_DELETE_SECONDS} 秒后删除")
