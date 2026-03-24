@@ -687,14 +687,14 @@ async def verify_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
     if not query.data.startswith('verify_'):
         return
     
-    await query.answer()
-    
     user_id = int(query.data.split('_')[1])
     chat_id = query.message.chat_id
     
     if query.from_user.id != user_id:
         await query.answer("❌ 这不是你的验证按钮！", show_alert=True)
         return
+    
+    await query.answer()
     
     is_subscribed = await check_subscription(user_id, chat_id, context)
     
@@ -759,8 +759,8 @@ def main():
     application.add_handler(CommandHandler("start", start))
     application.add_handler(CommandHandler("bind", bind_group))
     
-    application.add_handler(CallbackQueryHandler(handle_callback))
     application.add_handler(CallbackQueryHandler(verify_subscription, pattern=r"^verify_\d+$"))
+    application.add_handler(CallbackQueryHandler(handle_callback))
     
     application.add_handler(MessageHandler(
         filters.StatusUpdate.NEW_CHAT_MEMBERS,
