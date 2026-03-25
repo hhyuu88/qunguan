@@ -51,11 +51,95 @@ EMOJI_VERIFY = os.getenv('EMOJI_VERIFY', '5197434882321567830')
 EMOJI_SUBSCRIBE = os.getenv('EMOJI_SUBSCRIBE', '5267500801240092311')
 EMOJI_LIST = os.getenv('EMOJI_LIST', '5197288647275071607')
 
-# 文案用（只在新成员欢迎消息中使用）
+# 文案用（原有的）
 EMOJI_WAVE = os.getenv('EMOJI_WAVE', '5215638109068220476')
 EMOJI_WARNING = os.getenv('EMOJI_WARNING', '5220181540222291016')
 EMOJI_MEGAPHONE = os.getenv('EMOJI_MEGAPHONE', '5267500801240092311')
 EMOJI_POINT_DOWN = os.getenv('EMOJI_POINT_DOWN', '5197503331215361533')
+
+# 新增 - 第一组动态 Emoji
+EMOJI_EYES = os.getenv('EMOJI_EYES', '5210956306952758910')  # 👀
+EMOJI_SMILE = os.getenv('EMOJI_SMILE', '5461117441612462242')  # 🙂
+EMOJI_ZAP = os.getenv('EMOJI_ZAP', '5456140674028019486')  # ⚡️
+EMOJI_COMET = os.getenv('EMOJI_COMET', '5224607267797606837')  # ☄️
+EMOJI_SHOPPING_BAG = os.getenv('EMOJI_SHOPPING_BAG', '5229064374403998351')  # 🛍
+EMOJI_NO_ENTRY = os.getenv('EMOJI_NO_ENTRY', '5260293700088511294')  # ⛔️
+EMOJI_PROHIBITED = os.getenv('EMOJI_PROHIBITED', '5240241223632954241')  # 🚫
+EMOJI_EXCLAMATION = os.getenv('EMOJI_EXCLAMATION', '5274099962655816924')  # ❗️
+EMOJI_DOUBLE_EXCLAMATION = os.getenv('EMOJI_DOUBLE_EXCLAMATION', '5440660757194744323')  # ‼️
+EMOJI_QUESTION_EXCLAMATION = os.getenv('EMOJI_QUESTION_EXCLAMATION', '5314504236132747481')  # ⁉️
+
+# 新增 - 第二组动态 Emoji
+EMOJI_QUESTION = os.getenv('EMOJI_QUESTION', '5436113877181941026')  # ❓
+EMOJI_WARNING_ALT = os.getenv('EMOJI_WARNING_ALT', '5447644880824181073')  # ⚠️
+EMOJI_WARNING_ALT2 = os.getenv('EMOJI_WARNING_ALT2', '5420323339723881652')  # ⚠️
+EMOJI_GLOBE = os.getenv('EMOJI_GLOBE', '5447410659077661506')  # 🌐
+EMOJI_SPEECH_BALLOON = os.getenv('EMOJI_SPEECH_BALLOON', '5443038326535759644')  # 💬
+EMOJI_THOUGHT_BALLOON = os.getenv('EMOJI_THOUGHT_BALLOON', '5467538555158943525')  # 💭
+EMOJI_CHART_BAR = os.getenv('EMOJI_CHART_BAR', '5231200819986047254')  # 📊
+EMOJI_UP_ARROW = os.getenv('EMOJI_UP_ARROW', '5449683594425410231')  # 🔼
+EMOJI_CANDLE = os.getenv('EMOJI_CANDLE', '5451882707875276247')  # 🕯
+EMOJI_DOWN_ARROW = os.getenv('EMOJI_DOWN_ARROW', '5447183459602669338')  # 🔽
+EMOJI_CHART_UP = os.getenv('EMOJI_CHART_UP', '5244837092042750681')  # 📈
+EMOJI_CHART_DOWN = os.getenv('EMOJI_CHART_DOWN', '5246762912428603768')  # 📉
+EMOJI_CROSS_MARK = os.getenv('EMOJI_CROSS_MARK', '5210952531676504517')  # ❌
+EMOJI_COOL = os.getenv('EMOJI_COOL', '5222079954421818267')  # 🆒
+EMOJI_BELL = os.getenv('EMOJI_BELL', '5458603043203327669')  # 🔔
+
+# 新增 - 第三组动态 Emoji
+EMOJI_DISGUISED_FACE = os.getenv('EMOJI_DISGUISED_FACE', '5391112412445288650')  # 🥸
+EMOJI_CLOWN = os.getenv('EMOJI_CLOWN', '5269531045165816230')  # 🤡
+EMOJI_LIPS = os.getenv('EMOJI_LIPS', '5395444514028529554')  # 🫦
+EMOJI_PUSHPIN = os.getenv('EMOJI_PUSHPIN', '5397782960512444700')  # 📌
+EMOJI_DOLLAR = os.getenv('EMOJI_DOLLAR', '5409048419211682843')  # 💵
+EMOJI_MONEY_WINGS = os.getenv('EMOJI_MONEY_WINGS', '5233326571099534068')  # 💸
+EMOJI_MONEY_WINGS2 = os.getenv('EMOJI_MONEY_WINGS2', '5231449120635370684')  # 💸
+EMOJI_MONEY_WINGS3 = os.getenv('EMOJI_MONEY_WINGS3', '5278751923338490157')  # 💸
+EMOJI_MONEY_WINGS4 = os.getenv('EMOJI_MONEY_WINGS4', '5290017777174722330')  # 💸
+EMOJI_MICROPHONE = os.getenv('EMOJI_MICROPHONE', '5294339927318739359')  # 🎙
+EMOJI_BOOM = os.getenv('EMOJI_BOOM', '5276032951342088188')  # 💥
+EMOJI_FIRE = os.getenv('EMOJI_FIRE', '5424972470023104089')  # 🔥
+EMOJI_RIGHT_ARROW = os.getenv('EMOJI_RIGHT_ARROW', '5416117059207572332')  # ➡️
+EMOJI_GREEN_CIRCLE = os.getenv('EMOJI_GREEN_CIRCLE', '5416081784641168838')  # 🟢
+EMOJI_RED_CIRCLE = os.getenv('EMOJI_RED_CIRCLE', '5411225014148014586')  # 🔴
+EMOJI_PLAY_BUTTON = os.getenv('EMOJI_PLAY_BUTTON', '5264919878082509254')  # ▶️
+EMOJI_CURRENCY = os.getenv('EMOJI_CURRENCY', '5402186569006210455')  # 💱
+EMOJI_MONEY_WINGS5 = os.getenv('EMOJI_MONEY_WINGS5', '5231005931550030290')  # 💸
+
+# 新增 - 第四组动态 Emoji
+EMOJI_SOON = os.getenv('EMOJI_SOON', '5440621591387980068')  # 🔜
+EMOJI_ROUND_PUSHPIN = os.getenv('EMOJI_ROUND_PUSHPIN', '5391032818111363540')  # 📍
+EMOJI_PLUS = os.getenv('EMOJI_PLUS', '5397916757333654639')  # ➕
+EMOJI_GEM = os.getenv('EMOJI_GEM', '5427168083074628963')  # 💎
+EMOJI_STAR = os.getenv('EMOJI_STAR', '5438496463044752972')  # ⭐️
+EMOJI_SPARKLES = os.getenv('EMOJI_SPARKLES', '5325547803936572038')  # ✨
+EMOJI_CROWN = os.getenv('EMOJI_CROWN', '5217822164362739968')  # 👑
+EMOJI_WASTEBASKET = os.getenv('EMOJI_WASTEBASKET', '5445267414562389170')  # 🗑
+EMOJI_BOOKMARK = os.getenv('EMOJI_BOOKMARK', '5222444124698853913')  # 🔖
+EMOJI_HOURGLASS = os.getenv('EMOJI_HOURGLASS', '5386367538735104399')  # ⌛️
+EMOJI_SPEAKER = os.getenv('EMOJI_SPEAKER', '5388632425314140043')  # 🔈
+EMOJI_GAME = os.getenv('EMOJI_GAME', '5361741454685256344')  # 🎮
+EMOJI_GEAR = os.getenv('EMOJI_GEAR', '5341715473882955310')  # ⚙️
+EMOJI_RAINBOW = os.getenv('EMOJI_RAINBOW', '5409109841538994759')  # 🌈
+EMOJI_MOON = os.getenv('EMOJI_MOON', '5449569374065152798')  # 🌛
+EMOJI_SUN = os.getenv('EMOJI_SUN', '5402477260982731644')  # ☀️
+EMOJI_PARTY = os.getenv('EMOJI_PARTY', '5461151367559141950')  # 🎉
+EMOJI_FREE = os.getenv('EMOJI_FREE', '5406756500108501710')  # 🆓
+EMOJI_PENCIL = os.getenv('EMOJI_PENCIL', '5395444784611480792')  # ✏️
+EMOJI_SIREN = os.getenv('EMOJI_SIREN', '5395695537687123235')  # 🚨
+EMOJI_SHOPPING = os.getenv('EMOJI_SHOPPING', '5406683434124859552')  # 🛍
+
+# 通用动态 Emoji（常用符号）
+EMOJI_CHECK_MARK = os.getenv('EMOJI_CHECK_MARK', '5197434882321567830')  # ✅
+EMOJI_HOME = os.getenv('EMOJI_HOME', '5217822164362739968')  # 🏠
+EMOJI_BOOK = os.getenv('EMOJI_BOOK', '5222444124698853913')  # 📖
+EMOJI_MEMO = os.getenv('EMOJI_MEMO', '5395444784611480792')  # 📝
+EMOJI_MOBILE = os.getenv('EMOJI_MOBILE', '5294339927318739359')  # 📱
+EMOJI_BROADCAST = os.getenv('EMOJI_BROADCAST', '5267500801240092311')  # 📢
+EMOJI_POINT_UP = os.getenv('EMOJI_POINT_UP', '5197503331215361533')  # 👆
+EMOJI_BULB = os.getenv('EMOJI_BULB', '5451882707875276247')  # 💡
+EMOJI_TIMER = os.getenv('EMOJI_TIMER', '5386367538735104399')  # ⏱️
+EMOJI_CONFIG = os.getenv('EMOJI_CONFIG', '5341715473882955310')  # ⚙️
 
 # 存储配置
 CONFIG_FILE = 'force_sub_config.json'
@@ -244,7 +328,7 @@ def create_group_panel(chat_id: int):
 
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """处理 /start 命令 - 使用普通文本，避免 entity 错误"""
+    """处理 /start 命令"""
     user_id = update.effective_user.id
     chat_type = update.effective_chat.type
     
@@ -257,6 +341,9 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 f"你当前管理 {len(user_groups)} 个群组。\n\n"
                 "点击下方按钮管理你的群组："
             )
+            entities = [
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_WAVE)
+            ]
         else:
             text = (
                 "👋 你好！我是强制订阅机器人。\n\n"
@@ -270,11 +357,17 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "3. 在群组中发送 /bind\n"
                 "4. 回到这里配置"
             )
+            entities = [
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_WAVE),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("👋 你好！我是强制订阅机器人。\n\n"), length=2, custom_emoji_id=EMOJI_PUSHPIN),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("👋 你好！我是强制订阅机器人。\n\n📌 功能说明：\n• 新成员进群立即禁言\n• 必须订阅指定频道\n• 点击验证后自动解除禁言\n\n"), length=2, custom_emoji_id=EMOJI_BULB)
+            ]
         
         keyboard = create_main_menu(user_id)
         
         await update.message.reply_text(
             text,
+            entities=entities,
             reply_markup=keyboard
         )
     else:
@@ -291,11 +384,17 @@ async def bind_group(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat = update.effective_chat
     
     if chat.type == 'private':
-        await update.message.reply_text("❌ 此命令只能在群组中使用！")
+        await update.message.reply_text(
+            "❌ 此命令只能在群组中使用！",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
+        )
         return
     
     if not await is_group_admin(user_id, chat_id, context):
-        await update.message.reply_text("❌ 只有管理员才能绑定群组！")
+        await update.message.reply_text(
+            "❌ 只有管理员才能绑定群组！",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
+        )
         return
     
     try:
@@ -306,11 +405,15 @@ async def bind_group(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 "需要的权限：\n"
                 "• 删除消息\n"
                 "• 限制成员\n"
-                "• 邀请用户"
+                "• 邀请用户",
+                entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
             )
             return
     except TelegramError as e:
-        await update.message.reply_text(f"❌ 检查权限失败：{e}")
+        await update.message.reply_text(
+            f"❌ 检查权限失败：{e}",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
+        )
         return
     
     if user_id not in admin_groups:
@@ -336,12 +439,16 @@ async def bind_group(update: Update, context: ContextTypes.DEFAULT_TYPE):
         f"✅ 群组绑定成功！\n\n"
         f"📱 请点击下方链接，私聊我进行配置：\n"
         f"{private_link}\n\n"
-        f"或者直接私聊我，然后选择这个群组进行配置。"
+        f"或者直接私聊我，然后选择这个群组进行配置。",
+        entities=[
+            MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CHECK_MARK),
+            MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("✅ 群组绑定成功！\n\n"), length=2, custom_emoji_id=EMOJI_MOBILE)
+        ]
     )
 
 
 async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
-    """处理回调查询 - 使用普通文本，避免 entity 错误"""
+    """处理回调查询"""
     query = update.callback_query
     await query.answer()
     
@@ -352,6 +459,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = create_main_menu(user_id)
         await query.edit_message_text(
             "🏠 主菜单\n\n选择功能：",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_HOME)],
             reply_markup=keyboard
         )
     
@@ -364,6 +472,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         keyboard = create_groups_list(user_id)
         await query.edit_message_text(
             "📋 我的群组列表\n\n点击群组进行配置：",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_LIST)],
             reply_markup=keyboard
         )
     
@@ -378,7 +487,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
                 }
             )
         ]]
-        await query.edit_message_text(
+        help_text = (
             "📖 帮助说明\n\n"
             "工作流程：\n"
             "1. 新成员加入 → 立即禁言\n"
@@ -393,7 +502,11 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "需要的权限：\n"
             "• 删除消息\n"
             "• 限制成员\n"
-            "• 邀请用户",
+            "• 邀请用户"
+        )
+        await query.edit_message_text(
+            help_text,
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_BOOK)],
             reply_markup=InlineKeyboardMarkup(keyboard)
         )
     
@@ -422,18 +535,26 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         keyboard = create_group_panel(chat_id)
         
-        await query.edit_message_text(
+        group_text = (
             f"⚙️ 群组配置\n\n"
             f"📱 群组：{group_title}\n"
             f"📢 频道：{channel}\n"
             f"{status_emoji} 状态：{status_text}\n\n"
-            f"点击下方按钮进行配置：",
+            f"点击下方按钮进行配置："
+        )
+        await query.edit_message_text(
+            group_text,
+            entities=[
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CONFIG),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("⚙️ 群组配置\n\n"), length=2, custom_emoji_id=EMOJI_MOBILE),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len(f"⚙️ 群组配置\n\n📱 群组：{group_title}\n"), length=2, custom_emoji_id=EMOJI_BROADCAST)
+            ],
             reply_markup=keyboard
         )
     
     elif data.startswith("config_channel_"):
         chat_id = int(data.split('_')[2])
-        await query.edit_message_text(
+        channel_text = (
             "📢 设置频道\n\n"
             "请回复此消息，发送频道用户名或转发频道消息：\n\n"
             "• 格式：@频道用户名\n"
@@ -441,6 +562,13 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
             "💡 提示：\n"
             "1. 频道必须是公开频道\n"
             "2. 我必须在频道中是管理员"
+        )
+        await query.edit_message_text(
+            channel_text,
+            entities=[
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_BROADCAST),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("📢 设置频道\n\n请回复此消息，发送频道用户名或转发频道消息：\n\n• 格式：@频道用户名\n• 或者：转发频道任意消息\n\n"), length=2, custom_emoji_id=EMOJI_BULB)
+            ]
         )
         context.user_data['waiting_channel'] = chat_id
     
@@ -459,11 +587,18 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         keyboard = create_group_panel(chat_id)
         
-        await query.edit_message_text(
+        enable_text = (
             f"✅ 强制订阅已启用！\n\n"
             f"📢 频道：{channel}\n"
             f"🟢 状态：已启用\n\n"
-            f"新成员加入时将立即禁言，订阅频道后可解除。",
+            f"新成员加入时将立即禁言，订阅频道后可解除。"
+        )
+        await query.edit_message_text(
+            enable_text,
+            entities=[
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CHECK_MARK),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("✅ 强制订阅已启用！\n\n"), length=2, custom_emoji_id=EMOJI_BROADCAST)
+            ],
             reply_markup=keyboard
         )
     
@@ -478,6 +613,7 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         await query.edit_message_text(
             f"🔴 强制订阅已禁用！\n\n新成员可以自由发言。",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_RED_CIRCLE)],
             reply_markup=keyboard
         )
     
@@ -493,11 +629,19 @@ async def handle_callback(update: Update, context: ContextTypes.DEFAULT_TYPE):
         
         keyboard = create_group_panel(chat_id)
         
-        await query.edit_message_text(
+        status_msg = (
             f"📊 当前状态：\n\n"
             f"📢 频道：{channel}\n"
             f"{status_emoji} 状态：{status_text}\n"
-            f"⏱️ 提示消息自动删除时间：{WARNING_DELETE_SECONDS}秒",
+            f"⏱️ 提示消息自动删除时间：{WARNING_DELETE_SECONDS}秒"
+        )
+        await query.edit_message_text(
+            status_msg,
+            entities=[
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CHART_BAR),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("📊 当前状态：\n\n"), length=2, custom_emoji_id=EMOJI_BROADCAST),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len(f"📊 当前状态：\n\n📢 频道：{channel}\n{status_emoji} 状态：{status_text}\n"), length=2, custom_emoji_id=EMOJI_TIMER)
+            ],
             reply_markup=keyboard
         )
 
@@ -530,7 +674,8 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
     
     if not channel:
         await update.message.reply_text(
-            "❌ 无效的输入！\n\n请发送：\n• @频道用户名\n• 或转发频道消息"
+            "❌ 无效的输入！\n\n请发送：\n• @频道用户名\n• 或转发频道消息",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
         )
         return
     
@@ -541,7 +686,8 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
         if bot_member.status not in ['administrator', 'creator']:
             await update.message.reply_text(
                 f"❌ 我不是 {channel} 的管理员！\n\n"
-                "请先将我添加到频道并设为管理员。"
+                "请先将我添加到频道并设为管理员。",
+                entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
             )
             return
         
@@ -562,6 +708,11 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
             f"📢 频道：{channel}\n"
             f"📝 名称：{chat.title}\n\n"
             f"现在可以启用强制订阅了。",
+            entities=[
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CHECK_MARK),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len("✅ 频道设置成功！\n\n"), length=2, custom_emoji_id=EMOJI_BROADCAST),
+                MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=utf16_len(f"✅ 频道设置成功！\n\n📢 频道：{channel}\n"), length=2, custom_emoji_id=EMOJI_MEMO)
+            ],
             reply_markup=keyboard
         )
         
@@ -572,7 +723,8 @@ async def handle_private_message(update: Update, context: ContextTypes.DEFAULT_T
             "请确保：\n"
             "1. 频道用户名正确\n"
             "2. 频道是公开的\n"
-            "3. 我已被添加到频道并设为管理员"
+            "3. 我已被添加到频道并设为管理员",
+            entities=[MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_CROSS_MARK)]
         )
 
 
@@ -746,11 +898,17 @@ async def verify_subscription(update: Update, context: ContextTypes.DEFAULT_TYPE
                 )
             )
             
+            user = query.from_user
+            user_name = user.first_name
+            if user.last_name:
+                user_name += f" {user.last_name}"
+            success_text = f"🎉 欢迎 {user_name} 加入群组！您现在可以自由发言了。"
             await query.edit_message_text(
-                f"✅ 验证成功！\n\n"
-                f"欢迎 {query.from_user.mention_html()} 加入群组！\n\n"
-                f"你现在可以自由发言了。",
-                parse_mode='HTML'
+                success_text,
+                entities=[
+                    MessageEntity(type=MessageEntity.CUSTOM_EMOJI, offset=0, length=2, custom_emoji_id=EMOJI_PARTY),
+                    MessageEntity(type=MessageEntity.TEXT_MENTION, offset=utf16_len("🎉 欢迎 "), length=utf16_len(user_name), user=user)
+                ]
             )
             
             logger.info(f"用户 {user_id} 验证成功，已解除禁言")
